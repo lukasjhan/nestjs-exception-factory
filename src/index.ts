@@ -1,6 +1,10 @@
-import { BadRequestException, HttpException, HttpStatus } from "@nestjs/common";
+import { HttpException, HttpStatus } from "@nestjs/common";
 
-function createException(
+declare class CustomExceptionProtoType extends HttpException {
+  constructor();
+}
+
+export function createException(
   status: HttpStatus,
   errorCode: string,
   message: string
@@ -8,10 +12,8 @@ function createException(
   class CustomException extends HttpException {
     constructor() {
       super({ status, errorCode, message }, status);
-      Object.setPrototypeOf(this, HttpException.prototype);
+      Object.setPrototypeOf(this, Object.getPrototypeOf(HttpException));
     }
   }
-  return CustomException;
+  return CustomException as unknown as typeof CustomExceptionProtoType;
 }
-
-export default createException;

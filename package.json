@@ -1,0 +1,27 @@
+{
+  "name": "nestjs-custom-exceptions",
+  "version": "1.0.0",
+  "description": "Custom Exception Factory Function",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "nestjs",
+    "nest",
+    "exception",
+    "filter",
+    "error"
+  ],
+  "author": "lukas.j.han",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^9.4.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
